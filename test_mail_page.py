@@ -1,10 +1,7 @@
 import allure
 from .pages.login_page import LoginPage
 from .pages.mail_page import MailPage
-
-login = ''
-password = ''
-last_name = 'Гальбинский'
+from .auth_data import login, password, last_name
 
 
 @allure.feature('MailTest')
