@@ -26,7 +26,15 @@ def browser(request):
             })
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
-        browser = webdriver.Firefox()
+        browser =  browser = webdriver.Remote(
+            command_executor="http://192.168.0.229:4444/wd/hub",
+            desired_capabilities={
+                "browserName": "firefox",
+                "browserVersion": "latest",
+                "video": "True",
+                "platform": "WIN10",
+                "platformName": "windows",
+            })
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser
