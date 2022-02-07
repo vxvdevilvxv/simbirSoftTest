@@ -26,7 +26,7 @@ def browser(request):
             })
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
-        browser =  browser = webdriver.Remote(
+        browser = webdriver.Remote(
             command_executor="http://192.168.0.229:4444/wd/hub",
             desired_capabilities={
                 "browserName": "firefox",
